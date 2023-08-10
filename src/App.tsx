@@ -17,7 +17,11 @@ function App() {
   const [clientInfo, setClientInfo] = useState<ClientInfo | null>();
 
   const getInfo = async (ip: string = ''): Promise<ClientInfo> => {
-    const url = ip != '' ? `https://ipapi.co/${ip}/json/` : `https://ipapi.co/json/`;
+    let params = `?apiKey=${import.meta.env.VITE_IPIFY_API_KEY}`;
+    if (ip != '') params += `?ipAddress=${ip}`;
+
+    const url = `https://geo.ipify.org/api/v2/country${params}`;
+
     const response = await fetch(url);
     const data = await response.json();
     return data;
