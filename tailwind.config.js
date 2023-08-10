@@ -14,6 +14,10 @@ export default {
         'dark-gray': 'hsl(var(--color-dark-gray)/<alpha-value>)',
         'very-dark-gray': 'hsl(var(--color-very-dark-gray)/<alpha-value>)',
       },
+      backgroundImage: {
+        'background-desktop': 'url("/src/assets/pattern-bg-desktop.png")',
+        'background-mobile': 'url("/src/assets/pattern-bg-mobile.png")',
+      },
     },
   },
   plugins: [],
