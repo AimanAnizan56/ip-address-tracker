@@ -24,8 +24,11 @@ function App() {
   };
 
   useEffect(() => {
-    const data = getInfo().catch(console.error);
-    // setClientInfo(data);
+    getInfo()
+      .then((data) => {
+        setClientInfo(data);
+      })
+      .catch(console.error);
   }, [clientInfo]);
 
   return (
