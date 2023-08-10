@@ -65,7 +65,7 @@ function App() {
               type="text"
               name="ip-address"
               id="ip-address"
-              className="text-lg py-3 pl-5 rounded-l-xl min-w-[300px] w-[50vw] xl:w-[30vw] focus-visible:outline-none"
+              className="text-lg py-3 pl-5 rounded-l-xl min-w-[280px] w-[60vw] md:w-[50vw] lg:w-[40vw] desktop:w-[30vw] focus-visible:outline-none"
               placeholder="Search for any IP address or domain"
               onChange={(event) => setIPAddress(event.target.value)}
               onKeyUp={(event) => event.key == 'Enter' && getInfo()}
