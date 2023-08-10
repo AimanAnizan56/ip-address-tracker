@@ -29,7 +29,7 @@ function App() {
         setClientInfo(data);
       })
       .catch(console.error);
-  }, [clientInfo]);
+  }, []);
 
   return (
     <>
@@ -47,7 +47,7 @@ function App() {
           <div className="bg-white -mt-32 md:-mt-20 left-[50%] translate-x-[-50%] w-[85vw] max-w-screen-desktop shadow-md py-5 px-4 md:py-8 text-center md:text-left rounded-xl absolute flex flex-col gap-3 md:flex-row md:divide-x-2 justify-around">
             <div>
               <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">IP ADDRESS</div>
-              <div className="font-medium text-lg desktop:text-3xl">192.212.174.101</div>
+              <div className="font-medium text-lg desktop:text-3xl">{clientInfo ? clientInfo.ip : '192.212.174.101'}</div>
             </div>
             <div className="md:pl-7">
               <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">LOCATION</div>
