@@ -1,19 +1,32 @@
 import { useEffect, useState } from 'react';
 import ArrowLeft from './assets/icon-arrow.svg';
 
-function App() {
-  const [ip, setIp] = useState<string>();
+type ClientInfo = {
+  ip: string;
+  version: string;
+  org: string;
+  latitude: number;
+  longtitude: number;
+  utc_offset: string;
+  city: string;
+  region_code: string;
+  postal: string;
+};
 
-  const getIp = async () => {
-    const response = await fetch(`https://ipapi.co/json/`);
+function App() {
+  const [clientInfo, setClientInfo] = useState<ClientInfo | null>();
+
+  const getInfo = async (ip: string = ''): Promise<ClientInfo> => {
+    const url = ip != '' ? `https://ipapi.co/${ip}/json/` : `https://ipapi.co/json/`;
+    const response = await fetch(url);
     const data = await response.json();
-    setIp(data.ip);
-    console.log(ip);
+    return data;
   };
 
   useEffect(() => {
-    getIp().catch(console.error);
-  }, []);
+    const data = getInfo().catch(console.error);
+    setClientInfo(data);
+  }, [clientInfo]);
 
   return (
     <>
