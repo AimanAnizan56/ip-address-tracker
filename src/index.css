@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* hsl(0, 0%, 59%) */
+    --color-dark-gray: 0deg 0% 59%;
+    /* hsl(0, 0%, 17%) */
+    --color-very-dark-gray: 0deg 0% 17%;
+  }
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
