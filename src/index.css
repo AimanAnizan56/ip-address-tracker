@@ -9,15 +9,14 @@
     /* hsl(0, 0%, 17%) */
     --color-very-dark-gray: 0deg 0% 17%;
   }
-}
+  html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
 
-html {
-  font-size: 100%;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 }
