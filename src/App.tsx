@@ -3,6 +3,7 @@ import { ClientInfo } from './types';
 import { exactUrl } from './constant';
 import InputBox from './components/InputBox';
 import CardInfo from './components/CardInfo';
+import Map from './components/Map';
 
 function App() {
   const [clientInfo, setClientInfo] = useState<ClientInfo | null>();
@@ -27,6 +28,7 @@ function App() {
 
           <CardInfo clientInfo={clientInfo} />
         </div>
+        <Map />
       </main>
     </>
   );
