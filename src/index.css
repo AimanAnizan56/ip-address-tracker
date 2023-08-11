@@ -20,3 +20,36 @@
     box-sizing: inherit;
   }
 }
+
+@layer components {
+  .bg-img {
+    @apply bg-background-mobile desktop:bg-background-desktop bg-no-repeat bg-cover relative;
+  }
+
+  .title-header {
+    @apply text-3xl font-medium text-white max-w-xl text-center mx-auto pt-10 mb-8;
+  }
+
+  .input-textbox {
+    @apply text-lg py-3 pl-5 rounded-l-xl min-w-[280px] w-[60vw] md:w-[50vw] lg:w-[40vw] desktop:w-[30vw] focus-visible:outline-none;
+  }
+  .input-btn {
+    @apply bg-very-dark-gray min-w-[50px] rounded-r-xl flex align-middle justify-center active:bg-dark-gray;
+  }
+
+  .client-info-card {
+    @apply bg-white -mt-32 md:-mt-20 left-[50%] translate-x-[-50%] w-[85vw] max-w-screen-desktop shadow-md py-5 px-4 md:py-8 text-center md:text-left rounded-xl absolute flex flex-col gap-3 md:flex-row md:divide-x-2 justify-around;
+  }
+  .client-info-card > div:nth-child(n + 2) {
+    @apply md:pl-7;
+  }
+  .client-info-detail {
+    @apply flex flex-col justify-center;
+  }
+  .client-info-detail > .client-info-detail_title {
+    @apply text-dark-gray font-medium text-sm md:mb-3 desktop:text-base;
+  }
+  .client-info-detail > .client-info-detail_value {
+    @apply font-medium text-lg desktop:text-3xl;
+  }
+}

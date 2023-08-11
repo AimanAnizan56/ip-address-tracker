@@ -57,40 +57,32 @@ function App() {
   return (
     <>
       <main>
-        <div className="bg-background-mobile desktop:bg-background-desktop bg-no-repeat bg-cover relative">
-          <h1 className="text-3xl font-medium text-white max-w-xl text-center mx-auto pt-10 mb-8">IP Address Tracker</h1>
+        <div className="bg-img">
+          <h1 className="title-header">IP Address Tracker</h1>
 
           <div className="flex justify-center pb-40">
-            <input
-              type="text"
-              name="ip-address"
-              id="ip-address"
-              className="text-lg py-3 pl-5 rounded-l-xl min-w-[280px] w-[60vw] md:w-[50vw] lg:w-[40vw] desktop:w-[30vw] focus-visible:outline-none"
-              placeholder="Search for any IP address or domain"
-              onChange={(event) => setIPAddress(event.target.value)}
-              onKeyUp={(event) => event.key == 'Enter' && getInfo()}
-            />
-            <button className="bg-very-dark-gray min-w-[50px] rounded-r-xl flex align-middle justify-center active:bg-dark-gray" onClick={() => getInfo()}>
+            <input type="text" name="ip-address" id="ip-address" className="input-textbox" placeholder="Search for any IP address or domain" onChange={(event) => setIPAddress(event.target.value)} onKeyUp={(event) => event.key == 'Enter' && getInfo()} />
+            <button className="input-btn" onClick={() => getInfo()}>
               <img src={ArrowLeft} alt="arrow left" className="my-5" />
             </button>
           </div>
 
-          <div className="bg-white -mt-32 md:-mt-20 left-[50%] translate-x-[-50%] w-[85vw] max-w-screen-desktop shadow-md py-5 px-4 md:py-8 text-center md:text-left rounded-xl absolute flex flex-col gap-3 md:flex-row md:divide-x-2 justify-around">
-            <div className="flex flex-col justify-center">
-              <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">IP ADDRESS</div>
-              <div className="font-medium text-lg desktop:text-3xl md:max-w-[14rem] desktop:max-w-xs truncate">{clientInfo ? clientInfo.ip : 'Unknown'}</div>
+          <div className="client-info-card">
+            <div className="client-info-detail">
+              <div className="client-info-detail_title">IP ADDRESS</div>
+              <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs truncate">{clientInfo ? clientInfo.ip : 'Unknown'}</div>
             </div>
-            <div className="md:pl-7 flex flex-col justify-center">
-              <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">LOCATION</div>
-              <div className="font-medium text-lg desktop:text-3xl md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? getLocation() : 'Unknown'}</div>
+            <div className="client-info-detail">
+              <div className="client-info-detail_title">LOCATION</div>
+              <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? getLocation() : 'Unknown'}</div>
             </div>
-            <div className="md:pl-7 flex flex-col justify-center">
-              <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">TIMEZONE</div>
-              <div className="font-medium text-lg desktop:text-3xl">{clientInfo ? `UTC ${clientInfo.location.timezone}` : 'Unknown'}</div>
+            <div className="client-info-detail">
+              <div className="client-info-detail_title">TIMEZONE</div>
+              <div className="client-info-detail_value">{clientInfo ? `UTC ${clientInfo.location.timezone}` : 'Unknown'}</div>
             </div>
-            <div className="md:pl-7 flex flex-col justify-center">
-              <div className="text-dark-gray font-medium text-sm md:mb-3 desktop:text-md">ISP</div>
-              <div className="font-medium text-lg desktop:text-3xl md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? (clientInfo.isp != '' ? clientInfo.isp : 'None') : 'Unknown'}</div>
+            <div className="client-info-detail">
+              <div className="client-info-detail_title">ISP</div>
+              <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? (clientInfo.isp != '' ? clientInfo.isp : 'None') : 'Unknown'}</div>
             </div>
           </div>
         </div>
