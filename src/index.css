@@ -27,11 +27,11 @@
   }
 
   .title-header {
-    @apply text-3xl font-medium text-white max-w-xl text-center mx-auto pt-10 mb-8;
+    @apply text-2xl sm:text-3xl font-medium text-white max-w-xl text-center mx-auto pt-5 sm:pt-10 mb-5 sm:mb-8;
   }
 
   .input-textbox {
-    @apply text-lg py-3 pl-5 rounded-l-xl min-w-[280px] w-[60vw] md:w-[50vw] lg:w-[40vw] desktop:w-[30vw] focus-visible:outline-none;
+    @apply text-base sm:text-lg py-3 pl-5 rounded-l-xl min-w-[280px] w-[60vw] md:w-[50vw] lg:w-[40vw] desktop:w-[30vw] focus-visible:outline-none;
   }
   .input-btn {
     @apply bg-very-dark-gray min-w-[50px] rounded-r-xl flex align-middle justify-center active:bg-dark-gray;
@@ -47,9 +47,9 @@
     @apply flex flex-col justify-center;
   }
   .client-info-detail > .client-info-detail_title {
-    @apply text-dark-gray font-medium text-sm md:mb-3 desktop:text-base;
+    @apply text-dark-gray font-medium text-xs sm:text-sm md:mb-3 desktop:text-base;
   }
   .client-info-detail > .client-info-detail_value {
-    @apply font-medium text-lg desktop:text-3xl;
+    @apply font-medium text-base sm:text-lg desktop:text-3xl;
   }
 }
