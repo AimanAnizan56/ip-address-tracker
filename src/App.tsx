@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="min-h-[100vh] flex flex-col">
         <div className="bg-img z-50">
           <h1 className="title-header">IP Address Tracker</h1>
 

@@ -29,7 +29,7 @@ const Map = ({ location }: Props) => {
   });
 
   return (
-    <MapContainer center={location} zoom={16} scrollWheelZoom={false} className="h-[66vh] w-[100vw] z-0" zoomControl={false}>
+    <MapContainer center={location} zoom={16} scrollWheelZoom={false} className="flex-1 z-0" zoomControl={false}>
       <TileLayer attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>' url={url} />
       <ZoomControl position="bottomright" />
       <Marker position={location} title="Current location" icon={customMarker} />
