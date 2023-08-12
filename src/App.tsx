@@ -17,7 +17,7 @@ function App() {
     fetch(exactUrl)
       .then((response) => {
         response.json().then((data: ClientInfo) => {
-          if (response.status != 200) {
+          if (response.status != 200 || data.code == 403) {
             setError({
               value: true,
               message: data.messages,

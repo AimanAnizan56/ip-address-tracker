@@ -13,8 +13,8 @@ const InputBox = ({ setClientInfo }: Props) => {
   const getInfo = async () => {
     let url: string;
     domainRegex.lastIndex = 0; // RESETTING LAST INDEX
-    if (domainRegex.test(inputValue)) url = `${exactUrl}&domain=${inputValue}`;
-    else url = `${exactUrl}&ipAddress=${inputValue}`;
+    if (domainRegex.test(inputValue)) url = `${exactUrl}/domain/${inputValue}`;
+    else url = `${exactUrl}/ip/${inputValue}`;
     const response = await fetch(url);
     if (response.status != 200) {
       setClientInfo(null);
