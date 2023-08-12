@@ -20,19 +20,19 @@ const CardInfo = ({ clientInfo }: Props) => {
     <div className="client-info-card">
       <div className="client-info-detail">
         <div className="client-info-detail_title">IP ADDRESS</div>
-        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs truncate">{clientInfo ? clientInfo.ip : 'Unknown'}</div>
+        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs truncate">{clientInfo && clientInfo.ip ? clientInfo.ip : 'Unknown'}</div>
       </div>
       <div className="client-info-detail">
         <div className="client-info-detail_title">LOCATION</div>
-        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? getLocation() : 'Unknown'}</div>
+        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo && clientInfo.location ? getLocation() : 'Unknown'}</div>
       </div>
       <div className="client-info-detail">
         <div className="client-info-detail_title">TIMEZONE</div>
-        <div className="client-info-detail_value">{clientInfo ? `UTC ${clientInfo.location.timezone}` : 'Unknown'}</div>
+        <div className="client-info-detail_value">{clientInfo && clientInfo.location ? `UTC ${clientInfo.location.timezone}` : 'Unknown'}</div>
       </div>
       <div className="client-info-detail">
         <div className="client-info-detail_title">ISP</div>
-        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo ? (clientInfo.isp != '' ? clientInfo.isp : 'None') : 'Unknown'}</div>
+        <div className="client-info-detail_value md:max-w-[14rem] desktop:max-w-xs">{clientInfo && clientInfo.isp ? (clientInfo.isp != '' ? clientInfo.isp : 'None') : 'Unknown'}</div>
       </div>
     </div>
   );

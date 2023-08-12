@@ -8,11 +8,22 @@ import Map from './components/Map';
 function App() {
   const [clientInfo, setClientInfo] = useState<ClientInfo | null>();
   const [location, setLocation] = useState({ lat: 40.710231418648, lng: -73.98893138917833 });
+  const [isError, setError] = useState({
+    value: false,
+    message: '',
+  });
 
   useEffect(() => {
     fetch(exactUrl)
       .then((response) => {
         response.json().then((data: ClientInfo) => {
+          if (response.status != 200) {
+            setError({
+              value: true,
+              message: data.messages,
+            });
+            return;
+          }
           setClientInfo(data);
         });
       })
@@ -20,7 +31,7 @@ function App() {
   }, []);
 
   useLayoutEffect(() => {
-    if (clientInfo) {
+    if ((clientInfo != null || clientInfo != undefined) && clientInfo.location) {
       setLocation({
         lat: clientInfo?.location.lat,
         lng: clientInfo?.location.lng,
@@ -34,6 +45,7 @@ function App() {
         <div className="bg-img z-50">
           <h1 className="title-header">IP Address Tracker</h1>
 
+          {isError.value && <div className="text-red-500 max-w-xl mx-auto text-center">{isError.message}</div>}
           <InputBox setClientInfo={setClientInfo} />
 
           <CardInfo clientInfo={clientInfo} />

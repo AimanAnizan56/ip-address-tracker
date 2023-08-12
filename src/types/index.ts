@@ -11,4 +11,6 @@ export type ClientInfo = {
     geonameId: number;
   };
   isp: string;
+  code: number;
+  messages: string;
 };

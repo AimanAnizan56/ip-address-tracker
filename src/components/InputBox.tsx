@@ -21,6 +21,10 @@ const InputBox = ({ setClientInfo }: Props) => {
       return;
     }
     const data: ClientInfo = await response.json();
+    if (data.code == 403) {
+      setClientInfo(null);
+      return;
+    }
     setClientInfo(data);
   };
 
